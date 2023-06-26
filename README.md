@@ -32,11 +32,11 @@ There are many ways to solve this takehome.
 The actual code and implementation matters less than the end behavior.
 Here are the specific conditions we require:
 
-0. The `entrypoint` server must be deployed to Kubernetes.
-0. The `entrypoint` server must be publicly reachable.
-0. The `generator` server must NOT be deployed to Kubernetes.
-0. The `generator` server must NOT be publicly reachable.
-0. The `entrypoint` server must be able to reach the `generator` server.
+1. The `entrypoint` server must be deployed to Kubernetes.
+2. The `entrypoint` server must be publicly reachable.
+3. The `generator` server must NOT be deployed to Kubernetes.
+4. The `generator` server must NOT be publicly reachable.
+5. The `entrypoint` server must be able to reach the `generator` server.
 
 ## Other Pro Tips
 - When developing with Kubernetes, you can use `minikube` or some local
