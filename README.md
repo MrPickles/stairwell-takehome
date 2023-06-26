@@ -9,7 +9,7 @@ In a nutshell, your goal is to deploy them and make them talk to each other.
 The first server is in the `entrypoint` folder.
 You can think of it as a user-facing API server.
 It should be on Kubernetes and available to the public Internet.
-Is has the second server as a dependency.
+It has the second server as a dependency.
 
 The second server is in the `generator` folder.
 You can think of it as a backend server with high compute requirements.
