@@ -38,6 +38,8 @@ Here are the specific conditions we require:
 4. The `generator` server must NOT be publicly reachable.
 5. The `entrypoint` server must be able to reach the `generator` server.
 
+You will be expected to demo this and show that it works.
+
 ## Other Pro Tips
 - When developing with Kubernetes, you can use `minikube` or some local
   single-node cluster.
