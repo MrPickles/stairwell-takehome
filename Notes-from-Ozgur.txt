@@ -12,4 +12,11 @@
 #
 # - Backend (generator) is running on my GCP VM instance. I added a firewall rule to allow traffic on port 
 # 3000/tcp. 
+#
+# - I created a Makefile, in case it's needed to build the binary again, the targets are build, deploy & rollout.
+#  deploy target build & deploys the new image to dockerhub. rollout target updates the deployment on k8s cluster.
+#
+# - As the k8s cluster, I used my own K3S installation. I created a DNS record for this service (stairwell.tiki.systems)
+# so, you can reach the service at the address http://stairwell.tiki.systems
+
 

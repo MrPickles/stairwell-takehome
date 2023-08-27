@@ -1,4 +1,4 @@
-.PHONY: build  deploy
+.PHONY: build  deploy rollout
 IMAGE_NAME := stairwell-takehome-entrypoint:latest
 DOCKER_HUB_USERNAME := guru
 
@@ -10,3 +10,6 @@ deploy: build
 	@echo "Pushing image to dockerhub"
 	@docker tag $(IMAGE_NAME) $(DOCKER_HUB_USERNAME)/$(IMAGE_NAME)
 	@docker push $(DOCKER_HUB_USERNAME)/$(IMAGE_NAME)
+
+rollout:
+	@KUBECONFIG=~/.kube/k3s.yaml kubectl rollout restart deployment entrypoint-deployment -n stairwell
