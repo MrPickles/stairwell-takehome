@@ -19,12 +19,10 @@ spec:
     spec:
       containers:
         - name: entrypoint-container
-          # It's totally fine to store the image in a container registry.
-          # If so, you'll probably want to change the image and pull policy.
-          image: stairwell/entrypoint
-          imagePullPolicy: Never
+          image: guru/stairwell-takehome-entrypoint
+          imagePullPolicy: Always
           args:
-            - --uri=https://stairwell.com/robots.txt # TODO(candidate): Change this.
+            - --uri=http://api.tiki.systems:3000
           ports:
             - protocol: TCP
               containerPort: 8080
@@ -35,8 +33,6 @@ kind: Service
 metadata:
   namespace: stairwell
   name: entrypoint-service
-# With this service definition, you'll be able to reach the server from your local machine.
-# However, you may want to set up some sort of ingress to expose it to the public.
 spec:
   type: NodePort
   selector:
