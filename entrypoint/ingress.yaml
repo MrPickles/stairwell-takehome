@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: entrypoint-ingress
+  namespace: stairwell
+spec:
+  ingressClassName: "traefik"
+  rules:
+  - host: stairwell.tiki.systems
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: entrypoint-service
+            port:
+              number: 42069

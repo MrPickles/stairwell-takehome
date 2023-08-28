@@ -1,0 +1,22 @@
+# Ozgur's Notes:
+#  - Dockerfile modified to achieve a multi-stage build. The first stage builds the binary and the second 
+#  stage copies the binary to a scratch image. That way, only the necessary files (in our case, only the 
+# statically compiled binary) are copied to the final image. This allows us to have a very small image size 
+# (from 1GB+ to 6MB).
+# 
+#  - Currently, backend (generator) serves over http, thus we didn't need to add ca-certificates package. 
+# In case we need to serve over https, we need to add ca-certificates package to the final image.
+#
+# - I added CGO_ENABLED=0 to the build command to make sure that the binary is statically compiled, thus the final
+# binary wouldn't need any dynamic libraries.
+#
+# - Backend (generator) is running on my GCP VM instance. I added a firewall rule to allow traffic on port 
+# 3000/tcp. 
+#
+# - I created a Makefile, in case it's needed to build the binary again, the targets are build, deploy & rollout.
+#  deploy target build & deploys the new image to dockerhub. rollout target updates the deployment on k8s cluster.
+#
+# - As the k8s cluster, I used my own K3S installation. I created a DNS record for this service (stairwell.tiki.systems)
+# so, you can reach the service at the address http://stairwell.tiki.systems
+
+
