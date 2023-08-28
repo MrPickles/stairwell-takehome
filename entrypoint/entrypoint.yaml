@@ -22,7 +22,7 @@ spec:
           image: guru/stairwell-takehome-entrypoint
           imagePullPolicy: Always
           args:
-            - --uri=http://api.tiki.systems:3000
+            - --uri=http://10.42.0.1:3000
           ports:
             - protocol: TCP
               containerPort: 8080
