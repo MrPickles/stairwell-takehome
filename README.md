@@ -39,6 +39,13 @@ Here are the specific conditions we require:
 5. The `entrypoint` server must be able to reach the `generator` server.
 
 You will be expected to demo this and show that it works.
+(Also, please don't be cheeky and put everything on the same machine.)
+
+## Deliverables
+- A public demo URL.
+- Any code changes you made to get this working. (A patch file works great.)
+- A brief write-up on your approach. Make sure your writing's clear and concise.
+  It doesn't have to be long; just get to the point.
 
 ## Other Pro Tips
 - When developing with Kubernetes, you can use `minikube` or some local
